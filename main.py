@@ -4,7 +4,7 @@ from fpdf import FPDF
 import boto3
 
 # Allowed email domains
-ALLOWED_DOMAINS = {"gmail.com", "icloud.com", "hotmail.com", "outlook.com", "yahoo.com"}
+ALLOWED_DOMAINS = {"gmail.com", "icloud.com", "hotmail.com", "outlook.com", "yahoo.com", "yahoo.fr", "outlook.fr", "hotmail.fr"}
 
 # Function to get the MX record for a domain
 def get_mx_record(domain):

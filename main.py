@@ -89,13 +89,14 @@ pdf = FPDF()
 pdf.add_page()
 pdf.set_font("Arial", size=12)
 
-email_text = ", ".join(valid)  # Join emails with a comma and space
-
-pdf.multi_cell(200, 10, txt=email_text, align='L')  # Use multi_cell for wrapping text
+# Write each email on a new line with a comma at the end
+for item in valid:
+    pdf.cell(200, 10, txt=item + ",", ln=True, align='L')
 
 # Save the PDF
-pdf_file_name = "valid_emails-Validate-2.pdf"
+pdf_file_name = "valid_emails1.pdf"
 pdf.output(pdf_file_name)
+
 
 # Upload PDF to Wasabi
 wasabi_s3 = boto3.client(
